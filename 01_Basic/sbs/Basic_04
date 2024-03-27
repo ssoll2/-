@@ -1,0 +1,29 @@
+package sbs;
+
+/*
+ * [문제] 아래와 같은 내용을 콘솔 창에 출력해 보세요
+ * 		 단, 앞의 예제들에서 배운 내용을 활용할 것
+ * 
+ * 		이 름 : 황 민 수
+ * 		연락처 : 010-1111-1111
+ * 		이메일 : lovesome99@naver.com
+ * 		주 소 : 경기도 안양시
+ */
+public class Basic_04 {
+
+	public static void main(String[] args) {
+		
+		System.out.print("이 름 : " + "황 민 수");
+		System.out.println("\n연락처 : 010-1111-1111");
+		System.out.print("이메일 : lovesome99@naver.com\n");
+		System.out.println("주 소 : 경기도 안양시");
+		
+		
+		
+		
+		
+		
+
+	}
+
+}
