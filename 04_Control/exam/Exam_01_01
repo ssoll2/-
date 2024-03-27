@@ -1,0 +1,44 @@
+package exam;
+
+import java.util.Scanner;
+
+/*
+ * 키보드로 국어, 영어, 수학, 자바 점수를 입력받아
+ * 총점, 평균(소수 2자리)를 구한 후 
+ * 모든 정보를 콘솔에 출력해 보세요 
+ */
+
+public class Exam_01_01 {
+
+	public static void main(String[] args) {
+		 Scanner scanner = new Scanner(System.in);
+
+	        // 국어, 영어, 수학, 자바 점수 입력 받기
+	        System.out.print("국어 점수를 입력하세요: ");
+	        int korea = scanner.nextInt();
+
+	        System.out.print("영어 점수를 입력하세요: ");
+	        int eng = scanner.nextInt();
+
+	        System.out.print("수학 점수를 입력하세요: ");
+	        int math = scanner.nextInt();
+
+	        System.out.print("자바 점수를 입력하세요: ");
+	        int java = scanner.nextInt();
+
+	        // 총점 계산
+	        int total = korea + eng + math + java;
+
+	        // 평균 계산 (소수 둘째 자리까지)
+	        double average = (double) total / 4;
+
+	        // 결과 출력
+	        System.out.println("총점: " + total);
+	        System.out.printf("평균: %.2f\n", average);
+
+	        // 스캐너 닫기
+	        scanner.close();
+
+	}
+
+}
