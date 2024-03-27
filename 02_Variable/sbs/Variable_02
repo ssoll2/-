@@ -1,0 +1,23 @@
+package sbs;
+
+public class Variable_02 {
+
+	public static void main(String[] args) {
+
+		// 1. 변수 선언
+		// int num;
+		
+		// 2. 변수 초기화
+		// num = 120;
+		
+		// 1 + 2 : 변수 선언 및 변수 초기화
+		int num = 100;
+		
+		num = num + 150;
+		
+		System.out.println(num);
+		
+
+	}
+
+}
