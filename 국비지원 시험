@@ -23,6 +23,18 @@
 2. 다중 반복문을 활용한 코딩 구구단? v
 (실습 예제)
 
+public class Gugudan {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 9; i++) {
+            System.out.println("구구단 " + i + "단");
+            for (int j = 1; j <= 9; j++) {
+                System.out.println(i + " * " + j + " = " + (i * j));
+            }
+            System.out.println(); // 한 줄 띄우기
+        }
+    }
+}
+
 3. 에러 이유 및 디버깅(오류 찾아서 수정) v
 
 4. 객체지향 프로그램의 특징 5가지 v
