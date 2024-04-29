@@ -1,0 +1,563 @@
+1.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>차량 상세 정보 입력</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .left-column, .right-column {
+        width: 48%;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .left-column h2, .right-column h2 {
+        margin-top: 0;
+    }
+    .left-column .form-group {
+        margin-bottom: 15px;
+    }
+    .left-column .form-group label {
+        font-weight: bold;
+    }
+    .left-column .form-group span {
+        display: inline-block;
+        margin-left: 10px;
+    }
+    .right-column .form-group {
+        margin-bottom: 20px;
+    }
+    .right-column .form-group label {
+        font-weight: bold;
+    }
+    .right-column .form-group input[type="text"],
+    .right-column .form-group select {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .right-column .form-group textarea {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        resize: vertical;
+    }
+    .right-column .form-group .button-container {
+        margin-top: 20px;
+    }
+    .right-column .form-group button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .right-column .form-group button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="left-column">
+        <h2>차량 기본 정보</h2>
+        <div class="form-group">
+            <label>제조사:</label>
+            <span id="manufacturer">현대</span>
+        </div>
+        <div class="form-group">
+            <label>차종:</label>
+            <span id="model">그랜저</span>
+        </div>
+        <div class="form-group">
+            <label>연료:</label>
+            <span id="fuel">휘발유</span>
+        </div>
+        <div class="form-group">
+            <label>변속기:</label>
+            <span id="transmission">자동</span>
+        </div>
+        <div class="form-group">
+            <label>색상:</label>
+            <span id="color">흰색</span>
+        </div>
+        <div class="form-group">
+            <label>모델:</label>
+            <span id="car_model">2022년식</span>
+        </div>
+    </div>
+    <div class="right-column">
+        <h2>추가 정보 입력</h2>
+        <div class="form-group">
+            <label for="member_number">회원번호</label>
+            <input type="text" id="member_number" name="member_number" placeholder="회원번호 입력">
+        </div>
+        <div class="form-group">
+            <label for="car_division_number">차량구분번호</label>
+            <input type="text" id="car_division_number" name="car_division_number" placeholder="차량구분번호 입력">
+        </div>
+        <div class="form-group">
+            <label for="car_number">차량번호</label>
+            <input type="text" id="car_number" name="car_number" placeholder="차량번호 입력">
+        </div>
+        <div class="form-group">
+            <label for="mileage">주행거리</label>
+            <input type="text" id="mileage" name="mileage" placeholder="주행거리 입력">
+        </div>
+        <div class="form-group">
+            <label for="price">희망가격</label>
+            <input type="text" id="price" name="price" placeholder="희망가격 입력">
+        </div>
+        <div class="form-group">
+            <label for="details">상세정보</label>
+            <textarea id="details" name="details" placeholder="상세정보 입력" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="photo">사진첨부</label>
+            <input type="file" id="photo" name="photo">
+        </div>
+        <div class="form-group button-container">
+            <button type="submit">딜러에게 전송</button>
+            <button type="reset">초기화</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+2.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>차량 상세 정보 입력</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .section {
+        background-color: #fff;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .section h2 {
+        margin-top: 0;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        font-weight: bold;
+    }
+    .form-group input[type="text"],
+    .form-group select {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .form-group textarea {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        resize: vertical;
+    }
+    .form-group .button-container {
+        margin-top: 20px;
+    }
+    .form-group button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .form-group button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="section">
+        <h2>차량 기본 정보</h2>
+        <div class="form-group">
+            <label for="manufacturer">제조사</label>
+            <input type="text" id="manufacturer" name="manufacturer" value="현대" readonly>
+        </div>
+        <div class="form-group">
+            <label for="model">차종</label>
+            <input type="text" id="model" name="model" value="그랜저" readonly>
+        </div>
+        <div class="form-group">
+            <label for="fuel">연료</label>
+            <input type="text" id="fuel" name="fuel" value="휘발유" readonly>
+        </div>
+        <div class="form-group">
+            <label for="transmission">변속기</label>
+            <input type="text" id="transmission" name="transmission" value="자동" readonly>
+        </div>
+        <div class="form-group">
+            <label for="color">색상</label>
+            <input type="text" id="color" name="color" value="흰색" readonly>
+        </div>
+        <div class="form-group">
+            <label for="car_model">모델</label>
+            <input type="text" id="car_model" name="car_model" value="2022년식" readonly>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>추가 정보 입력</h2>
+        <div class="form-group">
+            <label for="member_number">회원번호</label>
+            <input type="text" id="member_number" name="member_number" placeholder="회원번호 입력">
+        </div>
+        <div class="form-group">
+            <label for="car_division_number">차량구분번호</label>
+            <input type="text" id="car_division_number" name="car_division_number" placeholder="차량구분번호 입력">
+        </div>
+        <div class="form-group">
+            <label for="car_number">차량번호</label>
+            <input type="text" id="car_number" name="car_number" placeholder="차량번호 입력">
+        </div>
+        <div class="form-group">
+            <label for="mileage">주행거리</label>
+            <input type="text" id="mileage" name="mileage" placeholder="주행거리 입력">
+        </div>
+        <div class="form-group">
+            <label for="price">희망가격</label>
+            <input type="text" id="price" name="price" placeholder="희망가격 입력">
+        </div>
+        <div class="form-group">
+            <label for="details">상세정보</label>
+            <textarea id="details" name="details" placeholder="상세정보 입력" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="photo">사진첨부</label>
+            <input type="file" id="photo" name="photo">
+        </div>
+        <div class="form-group button-container">
+            <button type="submit">딜러에게 전송</button>
+            <button type="reset">초기화</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+////////////////////////////////////////////////////////////////////////////////////
+3.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>차량 상세 정보 입력</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        font-weight: bold;
+    }
+    .form-group input[type="text"],
+    .form-group select {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .form-group textarea {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        resize: vertical;
+    }
+    .form-group .button-container {
+        margin-top: 20px;
+    }
+    .form-group button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .form-group button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-group">
+        <label for="manufacturer">제조사</label>
+        <input type="text" id="manufacturer" name="manufacturer" value="현대" readonly>
+    </div>
+    <div class="form-group">
+        <label for="model">차종</label>
+        <input type="text" id="model" name="model" value="그랜저" readonly>
+    </div>
+    <div class="form-group">
+        <label for="fuel">연료</label>
+        <input type="text" id="fuel" name="fuel" value="휘발유" readonly>
+    </div>
+    <div class="form-group">
+        <label for="transmission">변속기</label>
+        <input type="text" id="transmission" name="transmission" value="자동" readonly>
+    </div>
+    <div class="form-group">
+        <label for="color">색상</label>
+        <input type="text" id="color" name="color" value="흰색" readonly>
+    </div>
+    <div class="form-group">
+        <label for="car_model">모델</label>
+        <input type="text" id="car_model" name="car_model" value="2022년식" readonly>
+    </div>
+    <div class="form-group">
+        <label for="member_number">회원번호</label>
+        <input type="text" id="member_number" name="member_number" placeholder="회원번호 입력">
+    </div>
+    <div class="form-group">
+        <label for="car_division_number">차량구분번호</label>
+        <input type="text" id="car_division_number" name="car_division_number" placeholder="차량구분번호 입력">
+    </div>
+    <div class="form-group">
+        <label for="car_number">차량번호</label>
+        <input type="text" id="car_number" name="car_number" placeholder="차량번호 입력">
+    </div>
+    <div class="form-group">
+        <label for="mileage">주행거리</label>
+        <input type="text" id="mileage" name="mileage" placeholder="주행거리 입력">
+    </div>
+    <div class="form-group">
+        <label for="price">희망가격</label>
+        <input type="text" id="price" name="price" placeholder="희망가격 입력">
+    </div>
+    <div class="form-group">
+        <label for="details">상세정보</label>
+        <textarea id="details" name="details" placeholder="상세정보 입력" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="photo">사진첨부</label>
+        <input type="file" id="photo" name="photo">
+    </div>
+    <div class="form-group button-container">
+        <button type="submit">딜러에게 전송</button>
+        <button type="reset">초기화</button>
+    </div>
+</div>
+
+</body>
+</html>
+////////////////////////////////////////////////////////////////////////////////////////////
+
+4. 다음 입력으로 포커스 이동
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>차량 상세 정보 입력</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        font-weight: bold;
+    }
+    .form-group input[type="text"],
+    .form-group select {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .form-group textarea {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        resize: vertical;
+    }
+    .form-group .button-container {
+        margin-top: 20px;
+    }
+    .form-group button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .form-group button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <form id="carForm">
+        <div class="form-group">
+            <label for="manufacturer">제조사</label>
+            <input type="text" id="manufacturer" name="manufacturer" value="현대" readonly>
+        </div>
+        <div class="form-group">
+            <label for="model">차종</label>
+            <input type="text" id="model" name="model" value="그랜저" readonly>
+        </div>
+        <div class="form-group">
+            <label for="fuel">연료</label>
+            <input type="text" id="fuel" name="fuel" value="휘발유" readonly>
+        </div>
+        <div class="form-group">
+            <label for="transmission">변속기</label>
+            <input type="text" id="transmission" name="transmission" value="자동" readonly>
+        </div>
+        <div class="form-group">
+            <label for="color">색상</label>
+            <input type="text" id="color" name="color" value="흰색" readonly>
+        </div>
+        <div class="form-group">
+            <label for="car_model">모델</label>
+            <input type="text" id="car_model" name="car_model" value="2022년식" readonly>
+        </div>
+        <div class="form-group">
+            <label for="member_number">회원번호</label>
+            <input type="text" id="member_number" name="member_number" placeholder="회원번호 입력" tabindex="1">
+        </div>
+        <div class="form-group">
+            <label for="car_division_number">차량구분번호</label>
+            <input type="text" id="car_division_number" name="car_division_number" placeholder="차량구분번호 입력" tabindex="2">
+        </div>
+        <div class="form-group">
+            <label for="car_number">차량번호</label>
+            <input type="text" id="car_number" name="car_number" placeholder="차량번호 입력" tabindex="3">
+        </div>
+        <div class="form-group">
+            <label for="mileage">주행거리</label>
+            <input type="text" id="mileage" name="mileage" placeholder="주행거리 입력" tabindex="4">
+        </div>
+        <div class="form-group">
+            <label for="price">희망가격</label>
+            <input type="text" id="price" name="price" placeholder="희망가격 입력" tabindex="5">
+        </div>
+        <div class="form-group">
+            <label for="details">상세정보</label>
+            <textarea id="details" name="details" placeholder="상세정보 입력" rows="5" tabindex="6"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="photo">사진첨부</label>
+            <input type="file" id="photo" name="photo" tabindex="7">
+        </div>
+        <div class="form-group button-container">
+            <button type="submit">딜러에게 전송</button>
+            <button type="reset">초기화</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    // 다음 입력 요소로 포커스를 이동하는 함수
+    function focusNextInput(currentInput) {
+        var inputs = document.getElementsByTagName('input');
+        var textareas = document.getElementsByTagName('textarea');
+        var allInputs = Array.prototype.slice.call(inputs).concat(Array.prototype.slice.call(textareas));
+        var currentIndex = allInputs.indexOf(currentInput);
+
+        if (currentIndex < allInputs.length - 1) {
+            allInputs[currentIndex + 1].focus();
+        }
+    }
+
+    // 폼 제출 시 다음 입력 요소로 포커스 이동
+    document.getElementById('carForm').addEventListener('submit', function(e) {
+        var currentInput = document.activeElement;
+        focusNextInput(currentInput);
+        e.preventDefault();
+    });
+</script>
+
+</body>
+</html>
+//////////////////////////////////////////////////////////////////////////
