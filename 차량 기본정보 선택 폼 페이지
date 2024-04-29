@@ -1,0 +1,212 @@
+1.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>차량 기본 정보 선택</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+    }
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>차량 기본 정보 선택</h1>
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="manufacturer">제조사</label>
+            <select name="manufacturer" id="manufacturer">
+                <option value="">제조사 선택</option>
+                <option value="Hyundai">현대</option>
+                <option value="Kia">기아</option>
+                <option value="Toyota">도요타</option>
+                <!-- 다른 제조사 옵션을 추가할 수 있습니다 -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="model">차종</label>
+            <input type="text" id="model" name="model" placeholder="차종 입력">
+        </div>
+        <div class="form-group">
+            <label for="year">연식</label>
+            <input type="text" id="year" name="year" placeholder="연식 입력">
+        </div>
+        <div class="form-group">
+            <label for="transmission">변속기</label>
+            <select name="transmission" id="transmission">
+                <option value="">변속기 선택</option>
+                <option value="manual">수동</option>
+                <option value="automatic">자동</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="color">색상</label>
+            <input type="text" id="color" name="color" placeholder="색상 입력">
+        </div>
+        <div class="form-group">
+            <label for="model">모델</label>
+            <input type="text" id="model" name="model" placeholder="모델 입력">
+        </div>
+        <input type="submit" value="제출">
+    </form>
+</div>
+
+</body>
+</html>
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+2. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>차량 기본 정보 선택</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 10px;
+        width: 300px;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"],
+    select {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>차량 기본 정보 선택</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="manufacturer">제조사</label>
+                <select name="manufacturer" id="manufacturer">
+                    <option value="">제조사 선택</option>
+                    <option value="Hyundai">현대</option>
+                    <option value="Kia">기아</option>
+                    <option value="Toyota">도요타</option>
+                    <!-- 다른 제조사 옵션을 추가할 수 있습니다 -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="model">차종</label>
+                <input type="text" id="model" name="model" placeholder="차종 입력">
+            </div>
+            <div class="form-group">
+                <label for="year">연식</label>
+                <input type="text" id="year" name="year" placeholder="연식 입력">
+            </div>
+            <div class="form-group">
+                <label for="transmission">변속기</label>
+                <select name="transmission" id="transmission">
+                    <option value="">변속기 선택</option>
+                    <option value="manual">수동</option>
+                    <option value="automatic">자동</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="color">색상</label>
+                <input type="text" id="color" name="color" placeholder="색상 입력">
+            </div>
+            <div class="form-group">
+                <label for="model">모델</label>
+                <input type="text" id="model" name="model" placeholder="모델 입력">
+            </div>
+            <input type="submit" value="제출">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+//////////////////////////////////////////////////////////////////////////////////////////////////////
