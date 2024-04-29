@@ -210,3 +210,296 @@
 </body>
 </html>
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+3. 각 단계별로
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>차량 기본 정보 선택</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+    .form-step {
+        display: none;
+    }
+    .form-step.active {
+        display: block;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"],
+    select {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="form-step active" id="step1">
+    <h2>제조사 선택</h2>
+    <form>
+        <div class="form-group">
+            <label for="manufacturer">제조사</label>
+            <select name="manufacturer" id="manufacturer">
+                <option value="">제조사 선택</option>
+                <option value="Hyundai">현대</option>
+                <option value="Kia">기아</option>
+                <option value="Toyota">도요타</option>
+                <!-- 다른 제조사 옵션을 추가할 수 있습니다 -->
+            </select>
+        </div>
+        <input type="button" value="다음 단계로" onclick="nextStep(1)">
+    </form>
+</div>
+
+<div class="form-step" id="step2">
+    <h2>차량 정보 입력</h2>
+    <form>
+        <div class="form-group">
+            <label for="model">차종</label>
+            <input type="text" id="model" name="model" placeholder="차종 입력">
+        </div>
+        <div class="form-group">
+            <label for="year">연식</label>
+            <input type="text" id="year" name="year" placeholder="연식 입력">
+        </div>
+        <div class="form-group">
+            <label for="transmission">변속기</label>
+            <select name="transmission" id="transmission">
+                <option value="">변속기 선택</option>
+                <option value="manual">수동</option>
+                <option value="automatic">자동</option>
+            </select>
+        </div>
+        <input type="button" value="이전 단계로" onclick="prevStep(2)">
+        <input type="button" value="다음 단계로" onclick="nextStep(2)">
+    </form>
+</div>
+
+<div class="form-step" id="step3">
+    <h2>차량 추가 정보 입력</h2>
+    <form>
+        <div class="form-group">
+            <label for="color">색상</label>
+            <input type="text" id="color" name="color" placeholder="색상 입력">
+        </div>
+        <div class="form-group">
+            <label for="model">모델</label>
+            <input type="text" id="model" name="model" placeholder="모델 입력">
+        </div>
+        <input type="button" value="이전 단계로" onclick="prevStep(3)">
+        <input type="submit" value="제출">
+    </form>
+</div>
+
+<script>
+    var currentStep = 1;
+
+    function nextStep(step) {
+        document.getElementById('step' + step).classList.remove('active');
+        currentStep = step + 1;
+        document.getElementById('step' + currentStep).classList.add('active');
+    }
+
+    function prevStep(step) {
+        document.getElementById('step' + step).classList.remove('active');
+        currentStep = step - 1;
+        document.getElementById('step' + currentStep).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+4. 각 단계 별로
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>차량 기본 정보 선택</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+    .steps {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .step {
+        width: 100px;
+        text-align: center;
+        background-color: #ccc;
+        border-radius: 8px;
+        padding: 10px 0;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .step.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .step.disabled {
+        background-color: #ddd;
+        color: #666;
+        cursor: not-allowed;
+    }
+    .form-container {
+        border-radius: 8px;
+        background-color: #fff;
+        padding: 20px;
+    }
+    .form-step {
+        display: none;
+    }
+    .form-step.active {
+        display: block;
+    }
+</style>
+</head>
+<body>
+
+<div class="steps">
+    <div class="step active" onclick="goToStep(1)">제조사</div>
+    <div class="step disabled" onclick="goToStep(2)">차종</div>
+    <div class="step disabled" onclick="goToStep(3)">연식</div>
+    <div class="step disabled" onclick="goToStep(4)">변속기</div>
+    <div class="step disabled" onclick="goToStep(5)">색상</div>
+    <div class="step disabled" onclick="goToStep(6)">모델</div>
+</div>
+
+<div class="form-container">
+    <div id="step1" class="form-step active">
+        <h2>제조사 선택</h2>
+        <select name="manufacturer" id="manufacturer">
+            <option value="">제조사 선택</option>
+            <option value="Hyundai">현대</option>
+            <option value="Kia">기아</option>
+            <option value="Toyota">도요타</option>
+            <!-- 다른 제조사 옵션을 추가할 수 있습니다 -->
+        </select>
+        <button onclick="nextStep()">다음 단계로</button>
+    </div>
+
+    <div id="step2" class="form-step">
+        <h2>차종</h2>
+        <input type="text" id="model" name="model" placeholder="차종 입력">
+        <button onclick="nextStep()">다음 단계로</button>
+        <button onclick="prevStep()">이전 단계로</button>
+    </div>
+
+    <div id="step3" class="form-step">
+        <h2>연식</h2>
+        <input type="text" id="year" name="year" placeholder="연식 입력">
+        <button onclick="nextStep()">다음 단계로</button>
+        <button onclick="prevStep()">이전 단계로</button>
+    </div>
+
+    <div id="step4" class="form-step">
+        <h2>변속기</h2>
+        <select name="transmission" id="transmission">
+            <option value="">변속기 선택</option>
+            <option value="manual">수동</option>
+            <option value="automatic">자동</option>
+        </select>
+        <button onclick="nextStep()">다음 단계로</button>
+        <button onclick="prevStep()">이전 단계로</button>
+    </div>
+
+    <div id="step5" class="form-step">
+        <h2>색상</h2>
+        <input type="text" id="color" name="color" placeholder="색상 입력">
+        <button onclick="nextStep()">다음 단계로</button>
+        <button onclick="prevStep()">이전 단계로</button>
+    </div>
+
+    <div id="step6" class="form-step">
+        <h2>모델</h2>
+        <input type="text" id="model" name="model" placeholder="모델 입력">
+        <button onclick="prevStep()">이전 단계로</button>
+        <button onclick="submitForm()">제출</button>
+    </div>
+</div>
+
+<script>
+    var currentStep = 1;
+
+    function goToStep(step) {
+        var steps = document.querySelectorAll('.step');
+        steps.forEach(function(item, index) {
+            if (index < step) {
+                item.classList.add('active');
+                item.classList.remove('disabled');
+            } else {
+                item.classList.remove('active');
+                item.classList.add('disabled');
+            }
+        });
+
+        var formSteps = document.querySelectorAll('.form-step');
+        formSteps.forEach(function(item, index) {
+            if (index + 1 === step) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+
+        currentStep = step;
+    }
+
+    function nextStep() {
+        if (currentStep < 6) {
+            goToStep(currentStep + 1);
+        }
+    }
+
+    function prevStep() {
+        if (currentStep > 1) {
+            goToStep(currentStep - 1);
+        }
+    }
+
+    function submitForm() {
+        // 여기에 폼 제출 코드를 추가하세요.
+        // 예: document.querySelector('form').submit();
+    }
+</script>
+
+</body>
+</html>
+
+
